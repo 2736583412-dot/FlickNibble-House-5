@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlickNibble House - 光影与味蕾的双重疗愈</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="FlickNibble House是一个专注于"电影+餐饮"创新体验的品牌，推出全新旅游套餐，结合文化体验、美食探索和难忘旅程，为追求高品质旅行体验的情侣和旅行者量身定制。" />
+  <meta name="keywords" content="FlickNibble House, 电影+餐饮, 日本旅游, 浪漫旅行, 美食体验" />
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      .animation-delay-300 {
+        animation-delay: 0.3s;
+      }
+      .animation-delay-600 {
+        animation-delay: 0.6s;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Base styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    
+    /* Navigation styles */
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: #9333ea;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      color: #374151;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #f9fafb;
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+      
+      .desktop-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <!-- Brand Logo -->
+              <a href="#" class="flex-shrink-0 flex items-center" data-page="home">
+                <img 
+                  src="https://lf-code-agent.coze.cn/obj/x-ai-cn/316078710274/attachment/微信图片_20250926134537_20251227182351.jpg" 
+                  alt="FlickNibble House Logo" 
+                  class="h-8 w-auto mr-2"
+                />
+                <span class="ml-2 text-xl font-bold text-gray-900">FlickNibble House</span>
+          </a>
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden md:ml-10 md:flex md:space-x-8 desktop-menu">
+            <a href="#" class="px-1 pt-1 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors nav-link" data-page="home">首页</a>
+            
+            <div class="relative dropdown">
+              <button class="flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
+                关于我们
+                <i class="fa fa-chevron-down ml-1 text-xs"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#" data-page="overview">公司概述</a>
+                <a href="#" data-page="leadership">领导层</a>
+              </div>
+            </div>
+            
+            <div class="relative dropdown">
+              <button class="flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
+                产品服务
+                <i class="fa fa-chevron-down ml-1 text-xs"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#" data-page="japan-tour">日本旅游套餐</a>
+                <a href="#" data-page="programs">节目活动</a>
+              </div>
+            </div>
+            
+            <div class="relative dropdown">
+              <button class="flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
+                为什么选择我们
+                <i class="fa fa-chevron-down ml-1 text-xs"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#" data-page="value">价值主张</a>
+              </div>
+            </div>
+            
+            <div class="relative dropdown">
+              <button class="flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">
+                联系我们
+                <i class="fa fa-chevron-down ml-1 text-xs"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#" data-page="inquiry">查询表</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Language Switcher -->
+        <div class="hidden md:flex items-center space-x-4">
+          <button class="px-2 py-1 text-sm rounded bg-purple-600 text-white language-btn" data-lang="zh">中</button>
+          <button class="px-2 py-1 text-sm rounded text-gray-700 language-btn" data-lang="en">EN</button>
+          <button class="px-2 py-1 text-sm rounded text-gray-700 language-btn" data-lang="ja">日</button>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="-mr-2 flex items-center md:hidden">
+          <button id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 focus:outline-none">
+            <i class="fa fa-bars h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100" data-page="home">首页</a>
+        
+        <div class="mobile-dropdown">
+          <button class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">
+            关于我们
+            <i class="fa fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="hidden pl-4 mt-1 space-y-1">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100" data-page="overview">公司概述</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100" data-page="leadership">领导层</a>
+          </div>
+        </div>
+        
+        <div class="mobile-dropdown">
+          <button class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">
+            产品服务
+            <i class="fa fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="hidden pl-4 mt-1 space-y-1">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100" data-page="japan-tour">日本旅游套餐</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100" data-page="programs">节目活动</a>
+          </div>
+        </div>
+        
+        <div class="mobile-dropdown">
+          <button class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">
+            为什么选择我们
+            <i class="fa fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="hidden pl-4 mt-1 space-y-1">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100" data-page="value">价值主张</a>
+          </div>
+        </div>
+        
+        <div class="mobile-dropdown">
+          <button class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">
+            联系我们
+            <i class="fa fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="hidden pl-4 mt-1 space-y-1">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100" data-page="inquiry">查询表</a>
+          </div>
+        </div>
+        
+        <!-- Mobile Language Switcher -->
+        <div class="flex space-x-2 px-3 py-2">
+          <button class="px-2 py-1 text-sm rounded bg-purple-600 text-white language-btn" data-lang="zh">中</button>
+          <button class="px-2 py-1 text-sm rounded text-gray-700 language-btn" data-lang="en">EN</button>
+          <button class="px-2 py-1 text-sm rounded text-gray-700 language-btn" data-lang="ja">日</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div id="page-container" class="pt-16 min-h-screen flex flex-col">
+    <!-- Home Page -->
+    <div id="home" class="page active">
+      <!-- Hero Section -->
+      <section class="relative pt-16 h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
+          <div class="h-full w-full">
+            <div class="absolute inset-0 transition-opacity duration-1000 opacity-100" style="background-image: url('https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Romantic%20cinema%20dining%20experience%2C%20couple%20watching%20movie%20while%20enjoying%20fine%20dining%2C%20elegant%20setting%2C%20warm%20lighting&sign=06a8e48270650e7e4562cc49bb311393'); background-size: cover; background-position: center;"></div>
+          </div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 animate-fadeIn">光影与味蕾的双重疗愈</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 animate-fadeIn animation-delay-300">FlickNibble House 10天5城日本夏日限量游</p>
+            <div class="flex flex-col sm:flex-row gap-4 animate-fadeIn animation-delay-600">
+              <a href="#" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors text-center" data-page="japan-tour">立即探索</a>
+              <a href="#" class="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors text-center" data-page="inquiry">立即咨询</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+          <a href="#features" class="text-white opacity-70 hover:opacity-100 transition-opacity">
+            <i class="fa fa-chevron-down text-2xl"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">我们的特色服务</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              FlickNibble House是一个专注于"电影+餐饮"创新体验的品牌，其本身是一个可以提供餐饮服务的电影院，通过基于场景的订餐、不间断送餐等服务，打破观影与用餐的界限。
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="h-60 overflow-hidden">
+                <img src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Luxury%20cinema%20seats%2C%20private%20booths%2C%20premium%20viewing%20experience&sign=e6755a2c604e74e1daa504457f7d2c63" alt="创新观影体验" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </div>
+              <div class="p-6">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                  <i class="fa fa-film text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">创新观影体验</h3>
+                <p class="text-gray-600">在享受美食的同时观看最新电影，打破传统观影模式</p>
+              </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="h-60 overflow-hidden">
+                <img src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Gourmet%20food%20presentation%2C%20fine%20dining%2C%20creative%20cuisine&sign=382c59150a22ad89c9af82a1887657a0" alt="精致美食享受" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </div>
+              <div class="p-6">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                  <i class="fa fa-utensils text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">精致美食享受</h3>
+                <p class="text-gray-600">专业厨师团队打造的创意料理，为您带来味蕾的盛宴</p>
+              </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="h-60 overflow-hidden">
+                <img src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Romantic%20Japanese%20travel%2C%20traditional%20architecture%2C%20cherry%20blossoms&sign=528c6b3abb67a49cbd771ac185988778" alt="浪漫日本之旅" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </div>
+              <div class="p-6">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                  <i class="fa fa-map-marked-alt text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">浪漫日本之旅</h3>
+                <p class="text-gray-600">10天5城深度体验，感受日本的文化、美食与浪漫</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Japan Tour Package -->
+      <section class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">10天5城日本夏日限量游</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              结合中国18-35岁情侣的浪漫旅行需求，将日本美食、电影浪漫、日本多地特色深度绑定，让整个旅程充满光、影、味蕾的双重疗愈。
+            </p>
+            <div class="inline-block">
+              <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full">
+                限量50组
+              </span>
+              <span class="inline-block ml-2 px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
+                限时优惠
+              </span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+              <div class="absolute -top-6 -left-6 w-40 h-40 bg-purple-200 rounded-full opacity-50 -z-10"></div>
+              <div class="absolute -bottom-6 -right-6 w-60 h-60 bg-pink-200 rounded-full opacity-50 -z-10"></div>
+              <img src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Japan%20summer%20tour%20couple%20travel%2C%20beautiful%20scenery%2C%20romantic%20atmosphere%2C%20Tokyo%20and%20Kyoto&sign=c1f2b6cf8fbb7361a2e85ce62982e43b" alt="日本旅游套餐" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-gray-900">行程亮点</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold mt-0.5 mr-3">1</div>
+                  <div>
+                    <span class="font-bold text-gray-900">东京：</span>
+                    <span class="text-gray-700">迪士尼乐园浪漫体验、米其林餐厅用餐</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold mt-0.5 mr-3">2</div>
+                  <div>
+                    <span class="font-bold text-gray-900">京都：</span>
+                    <span class="text-gray-700">传统日式旅馆、和服体验、茶道文化</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold mt-0.5 mr-3">3</div>
+                  <div>
+                    <span class="font-bold text-gray-900">大阪：</span>
+                    <span class="text-gray-700">环球影城、美食探索之旅、温泉度假</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold mt-0.5 mr-3">4</div>
+                  <div>
+                    <span class="font-bold text-gray-900">富士山：</span>
+                    <span class="text-gray-700">日出观赏、温泉酒店、浪漫晚餐</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold mt-0.5 mr-3">5</div>
+                  <div>
+                    <span class="font-bold text-gray-900">北海道：</span>
+                    <span class="text-gray-700">薰衣草田、海鲜美食、星空观测</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors text-center" data-page="japan-tour">查看详细行程</a>
+                <a href="#" class="px-8 py-3 bg-transparent border-2 border-purple-600 text-purple-600 font-medium rounded-lg hover:bg-purple-50 transition-colors text-center" data-page="inquiry">预约咨询</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">顾客评价</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              听听我们的顾客怎么说
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div class="flex items-center mb-4">
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+              </div>
+              <p class="text-gray-700 mb-6 italic">这是我们度过的最浪漫的旅行，电影与美食的结合让整个旅程充满惊喜。</p>
+              <div class="flex items-center">
+                <div class="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                  <i class="fa fa-user text-gray-500"></i>
+                </div>
+                <span class="font-medium text-gray-900">张先生 & 李女士</span>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div class="flex items-center mb-4">
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+              </div>
+              <p class="text-gray-700 mb-6 italic">服务非常贴心，行程安排合理，每个城市都有独特的体验。</p>
+              <div class="flex items-center">
+                <div class="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                  <i class="fa fa-user text-gray-500"></i>
+                </div>
+                <span class="font-medium text-gray-900">王先生 & 陈女士</span>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div class="flex items-center mb-4">
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-yellow-400 text-lg"></i>
+                <i class="fa fa-star text-gray-300 text-lg"></i>
+              </div>
+              <p class="text-gray-700 mb-6 italic">食物的品质超出预期，电影院的环境也非常舒适，强烈推荐！</p>
+              <div class="flex items-center">
+                <div class="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                  <i class="fa fa-user text-gray-500"></i>
+                </div>
+                <span class="font-medium text-gray-900">刘先生 & 赵女士</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">准备好开始您的浪漫之旅了吗？</h2>
+          <p class="text-xl mb-8 max-w-3xl mx-auto">
+            立即预订"10天5城日本夏日限量游"，享受光影与味蕾的双重疗愈体验
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors text-center" data-page="japan-tour">立即预订</a>
+            <a href="#" class="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors text-center" data-page="inquiry">了解更多</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Company Overview Page -->
+    <div id="overview" class="page hidden">
+      <!-- Page Header -->
+      <header class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">关于FlickNibble House</h1>
+          <p class="text-xl text-gray-300">公司概述</p>
+        </div>
+      </header>
+      
+      <!-- Main Content -->
+      <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 class="text-2xl font-bold mb-6 text-gray-900">关于FlickNibble House</h2>
+              <p class="text-gray-700 mb-4">FlickNibble House是一个专注于"电影+餐饮"创新体验的品牌，其本身是一个可以提供餐饮服务的电影院，通过基于场景的订餐、不间断送餐等服务，打破观影与用餐的界限。</p>
+              <p class="text-gray-700">
+                FlickNibble House成立于2018年，总部位于中国上海，是一家创新型的"电影+餐饮"体验品牌。我们致力于为顾客提供独特的观影和用餐体验，打破传统电影院和餐厅的界限，创造一个全新的娱乐空间。
+              </p>
+            </div>
+            <div class="relative">
+              <img 
+                src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Modern%20cinema%20dining%20interior%2C%20elegant%20design%2C%20comfortable%20seating%2C%20high%20end%20restaurant%20atmosphere&sign=222e32b8e33a50569ef7a8388850ee21" 
+                alt="FlickNibble House" 
+                class="w-full h-auto rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+          
+          <!-- Mission and Vision -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-purple-600">
+                <i class="fa fa-bullseye text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">我们的使命</h3>
+              <p class="text-gray-700">打破观影与用餐的界限。我们始终以新鲜品质和贴心服务为核心价值，让每位顾客不受干扰地欣赏精彩电影，同时品味便捷美味的食物。我们致力于成为场景融合行业的标杆品牌，让每一次观影体验都成为满足味觉和视觉双重享受的美好回忆。</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-600">
+                <i class="fa fa-eye text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">我们的愿景</h3>
+              <p class="text-gray-700">成为全球领先的"电影+餐饮"体验品牌，引领行业创新，让更多人享受这种独特的生活方式。</p>
+            </div>
+          </div>
+          
+          <!-- Core Values -->
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 md:p-12 rounded-xl mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-900">我们的核心价值</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600 mx-auto">
+                  <i class="fa fa-star text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">新鲜品质</h3>
+                <p class="text-gray-600 text-sm">我们始终以新鲜品质为核心价值，提供高品质的美食体验</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-600 mx-auto">
+                  <i class="fa fa-heart text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">贴心服务</h3>
+                <p class="text-gray-600 text-sm">以顾客为中心，提供周到细致的专属服务</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600 mx-auto">
+                  <i class="fa fa-handshake text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">合作共赢</h3>
+                <p class="text-gray-600 text-sm">与合作伙伴建立长期稳定的合作关系，实现互利共赢</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 text-red-600 mx-auto">
+                  <i class="fa fa-lightbulb text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">持续创新</h3>
+                <p class="text-gray-600 text-sm">不断创新服务和体验，引领行业发展潮流</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Main Businesses -->
+          <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-900">我们的主要业务</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-purple-600">
+                  <i class="fa fa-utensils text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-900">场景化餐饮服务</h3>
+                <p class="text-gray-700">
+                  针对不同类型的电影（剧情片、动作片、儿童动画等）提供定制化套餐，提供"无打扰送餐到座"服务，避免观影中途离席的不便。同时推出小分量、易拿取的餐品，满足观影场景需求。
+                </p>
+              </div>
+              
+              <div>
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-600">
+                  <i class="fa fa-ticket-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-900">"影票+餐饮"套餐营销</h3>
+                <p class="text-gray-700">
+                  设计"电影票+餐饮"组合套餐，提供会员专属折扣、生日观影餐饮礼包、节假日主题套餐（如情人节双人观影餐、春节家庭观影桶等）。
+                </p>
+              </div>
+              
+              <div>
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600">
+                  <i class="fa fa-users text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-900">企业团体定制服务</h3>
+                <p class="text-gray-700">
+                  为企业团建、学校活动、社团聚会等团体客户提供专属观影定制服务。根据团体规模和需求调整餐食品类、分量和价格。
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Connection with Entertainment Industry -->
+          <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-8 md:p-12 rounded-xl mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">与娱乐行业的联系</h2>
+            <p class="text-lg mb-6">
+              娱乐休闲行业的核心需求是为消费者提供"放松、愉悦、多元"的体验。我们的定制化餐品、无缝衔接的服务和主题活动，不仅满足了用户对电影内容的娱乐需求，更通过美食提升了整体体验的丰富度与舒适度。
+            </p>
+            <p class="text-lg">
+              这种模式不仅提升了单一场景的消费价值，更为娱乐休闲行业的场景创新提供了新方向，推动行业从"单一内容消费"向"综合体验消费"升级。
+            </p>
+          </div>
+          
+          <!-- Development History -->
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-900">发展历程</h2>
+            <div class="relative">
+              <!-- Timeline -->
+              <div class="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] h-full w-1 bg-purple-200"></div>
+              
+              <!-- Timeline Points -->
+              <div class="space-y-12">
+                <div class="relative md:flex md:items-center md:justify-between">
+                  <div class="md:w-5/12 md:text-right md:pr-8">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">2018年</h3>
+                    <p class="text-gray-700">FlickNibble House在上海成立，开设第一家"电影+餐饮"体验店</p>
+                  </div>
+                  <div class="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] w-8 h-8 rounded-full bg-purple-600 border-4 border-white shadow"></div>
+                  <div class="hidden md:block md:w-5/12 md:pl-8"></div>
+                </div>
+                
+                <div class="relative md:flex md:items-center md:justify-between">
+                  <div class="hidden md:block md:w-5/12 md:pl-8"></div>
+                  <div class="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] w-8 h-8 rounded-full bg-purple-600 border-4 border-white shadow"></div>
+                  <div class="md:w-5/12 md:pl-8">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">2020年</h3>
+                    <p class="text-gray-700">扩展至北京、广州、深圳，全国门店达到5家</p>
+                  </div>
+                </div>
+                
+                <div class="relative md:flex md:items-center md:justify-between">
+                  <div class="md:w-5/12 md:text-right md:pr-8">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">2022年</h3>
+                    <p class="text-gray-700">推出定制化电影主题餐单，获得行业创新奖</p>
+                  </div>
+                  <div class="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] w-8 h-8 rounded-full bg-purple-600 border-4 border-white shadow"></div>
+                  <div class="hidden md:block md:w-5/12 md:pl-8"></div>
+                </div>
+                
+                <div class="relative md:flex md:items-center md:justify-between">
+                  <div class="hidden md:block md:w-5/12 md:pl-8"></div>
+                  <div class="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] w-8 h-8 rounded-full bg-purple-600 border-4 border-white shadow"></div>
+                  <div class="md:w-5/12 md:pl-8">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">2025年</h3>
+                    <p class="text-gray-700">推出"10天5城日本夏日限量游"，将电影、美食与旅游相结合</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Leadership Page -->
+    <div id="leadership" class="page hidden">
+      <!-- Page Header -->
+      <header class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">关于FlickNibble House</h1>
+          <p class="text-xl text-gray-300">领导层</p>
+        </div>
+      </header>
+      
+      <!-- Main Content -->
+      <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">我们的领导团队</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              由行业资深专业人士组成的团队，致力于为顾客创造独特的"电影+餐饮"体验
+            </p>
+          </div>
+          
+          <!-- Leadership Team Members -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-80">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Business%20CEO%2C%20Asian%20man%2C%20confident%20smile%2C%20professional%20attire&sign=5720e9e017bae5ef3e3431f63104d923" 
+                  alt="Junhao Zhang"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Junhao Zhang</h3>
+                    <p class="text-gray-200">首席执行官 (CEO)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Junhao Zhang</h3>
+                <p class="text-purple-600 font-medium mb-4">首席执行官 (CEO)</p>
+                <p class="text-gray-700 mb-4">作为FlickNibble House的战略核心，CEO负责制定公司"电影观影+餐饮"场景融合的长期发展方向。领导影院合作资源和核心供应链伙伴的对接，确保业务模式的可持续性。协调各部门平衡观影体验和用餐服务的质量标准，推动品牌从区域试点向全国连锁扩张。同时，把握行业趋势，就IP主题店、线上线下一体化服务等关键战略做出决策。</p>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-medium text-gray-900 mb-2">贡献：</h4>
+                  <p class="text-gray-700 text-sm">保持业务聚焦核心业务领域，解决关键资源问题，带领公司突破地域限制。同时凭借精准决策把握行业机遇，既能保证服务质量又能使公司在竞争中建立自身特色。</p>
+                </div>
+                <div class="mt-4 flex space-x-3">
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-80">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Business%20CFO%2C%20Asian%20woman%2C%20professional%20attire%2C%20financial%20expert&sign=9dbc006593f52eefddad643f7f800e47" 
+                  alt="Xin Chen"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Xin Chen</h3>
+                    <p class="text-gray-200">首席财务官 (CFO)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Xin Chen</h3>
+                <p class="text-purple-600 font-medium mb-4">首席财务官 (CFO)</p>
+                <p class="text-gray-700 mb-4">CFO负责FlickNibble House的财务规划和资金管理，重点控制餐饮供应链成本、核算影院场地合作费用、分配营销预算。建立动态财务监控体系，追踪核心业务的收入和利润数据，及时优化成本结构。此外，协调融资规划和财务风险评估，为新店扩张、设备升级等投资决策提供精准财务分析支持，确保公司健康现金流和利润目标的实现。</p>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-medium text-gray-900 mb-2">贡献：</h4>
+                  <p class="text-gray-700 text-sm">是公司的财务领导者和利润保障者。通过严格控制供应链、场地等核心成本，动态监控收入和利润，夯实现金流和利润基础；同时为新店扩张、设备升级等投资提供精准财务分析，规避风险、支持决策，助力"电影观影+餐饮"模式实现稳定盈利与发展。</p>
+                </div>
+                <div class="mt-4 flex space-x-3">
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-80">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Data%20scientist%2C%20Asian%20man%2C%20analyzing%20data%2C%20professional%20attire&sign=9292762f608524de1091bc076ba1e167" 
+                  alt="Kaixin Wang"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Kaixin Wang</h3>
+                    <p class="text-gray-200">首席数据分析师 (CDO)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Kaixin Wang</h3>
+                <p class="text-purple-600 font-medium mb-4">首席数据分析师 (CDO)</p>
+                <p class="text-gray-700 mb-4">CDO负责建立FlickNibble House的数据收集体系，整合线上购票平台、餐饮消费记录、会员行为等多维度数据。通过分析不同影片类型对应的餐品偏好、会员复购周期等关键指标，为营销团队提供数据洞察，进行精准餐品推荐和会员分层运营。同时，定期出具数据报告，辅助CEO和DoM调整业务策略，例如根据数据反馈优化家庭电影套餐的餐品组合，提升用户满意度。</p>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-medium text-gray-900 mb-2">贡献：</h4>
+                  <p class="text-gray-700 text-sm">通过整合多维度信息，提取关键指标，为业务提供科学决策依据，避免营销和运营的盲目性。同时推动策略的动态优化，使服务更符合用户需求，既增强消费体验的粘性，又为"电影观影+餐饮"模式的高效运营和持续迭代提供支持。</p>
+                </div>
+                <div class="mt-4 flex space-x-3">
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 4 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-80">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Marketing%20director%2C%20Asian%20woman%2C%20marketing%20professional%2C%20creative%20thinking&sign=f66b1eeb29794c4cdc916fa1f408a9b5" 
+                  alt="Yixuan Yan"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Yixuan Yan</h3>
+                    <p class="text-gray-200">营销总监 (DoM)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Yixuan Yan</h3>
+                <p class="text-purple-600 font-medium mb-4">营销总监 (DoM)</p>
+                <p class="text-gray-700 mb-4">营销部（DoM）牵头制定整体营销战略，围绕"影片档期+节日节点"策划主题营销活动，如暑期亲子观影美食节、春节团圆观影桶等。协调线上线下营销渠道，领导社交媒体内容运营，包括抖音美食测评、小红书打卡活动、线下影院推广及会员体系建立等，提升品牌曝光度和用户获取转化。同时，协同首席数字官（CDO）和市场研究部（DMR），将数据洞察和市场需求融入营销战略，确保营销效果最大化。</p>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-medium text-gray-900 mb-2">贡献：</h4>
+                  <p class="text-gray-700 text-sm">通过结合影片档期和节日节点打造特色活动，实现目标客群精准触达。协调全渠道营销和会员体系有效扩大品牌影响力并带动用户转化；同时协同数据和研究团队优化策略，使营销举措更贴合市场需求。这种方式不仅能带动短期营收增长，还能为"电影观影+餐饮"模式积累长期用户粘性。</p>
+                </div>
+                <div class="mt-4 flex space-x-3">
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 5 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-80">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Market%20research%20director%2C%20Asian%20woman%2C%20analyzing%20market%20data%2C%20professional%20attire&sign=40e89b92c56eaae74a22f2fb942dd649" 
+                  alt="Ruoqi Sun"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Ruoqi Sun</h3>
+                    <p class="text-gray-200">市场研究总监 (DMR)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Ruoqi Sun</h3>
+                <p class="text-purple-600 font-medium mb-4">市场研究总监 (DMR)</p>
+                <p class="text-gray-700 mb-4">市场研究部（DMR）负责开展市场调研工作。通过用户问卷、焦点小组、竞品分析等方式，识别年轻情侣、家庭用户、学生群体等目标客群的观影和餐饮需求。追踪行业趋势，分析竞品的产品策略和营销模式，为公司的食品创新（如低糖健康观影餐、地方特色小吃适配）和服务优化（如提升配送效率）提供依据。定期出具市场研究报告，为CEO的战略决策和DoM的活动策划提供前瞻性市场参考。</p>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-medium text-gray-900 mb-2">贡献：</h4>
+                  <p class="text-gray-700 text-sm">通过多种方法识别不同客群需求，追踪行业趋势和竞品动态，为食品创新和服务优化提供精准方向，避免产品与市场脱节。出具的前瞻性报告能支撑CEO战略规划和DoM营销活动，让业务决策更贴合市场趋势。这不仅有助于"电影观影+餐饮"模式发展差异化竞争力，还为其长期发展奠定坚实的市场适配基础。</p>
+                </div>
+                <div class="mt-4 flex space-x-3">
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <i class="fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Team Culture -->
+          <div class="mt-20 bg-gradient-to-br from-purple-50 to-pink-50 p-8 md:p-12 rounded-xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-900">我们的团队文化</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600 mx-auto">
+                  <i class="fa fa-lightbulb text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2 text-center">创新思维</h3>
+                <p class="text-gray-600 text-sm text-center">鼓励团队成员提出新想法，不断创新服务和体验</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-600 mx-auto">
+                  <i class="fa fa-users text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2 text-center">协作精神</h3>
+                <p class="text-gray-600 text-sm text-center">强调团队合作，共同创造卓越的顾客体验</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600 mx-auto">
+                  <i class="fa fa-trophy text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2 text-center">追求卓越</h3>
+                <p class="text-gray-600 text-sm text-center">不断提升服务质量，追求行业领先地位</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 text-red-600 mx-auto">
+                  <i class="fa fa-heart text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2 text-center">热爱文化</h3>
+                <p class="text-gray-600 text-sm text-center">热爱电影和美食文化，传递美好体验</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Japan Tour Page -->
+    <div id="japan-tour" class="page hidden">
+      <!-- Page Header -->
+      <header class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">产品服务</h1>
+          <p class="text-xl text-gray-300">日本旅游套餐</p>
+        </div>
+      </header>
+      
+      <!-- Main Content -->
+      <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Featured Images */}
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+            <div class="lg:col-span-2 relative overflow-hidden rounded-xl shadow-lg h-96">
+              <img 
+                src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Japan%20summer%20tour%20couple%20travel%2C%20beautiful%20scenery%2C%20romantic%20atmosphere%2C%20Tokyo%20and%20Kyoto&sign=c54223d00b322df1245f9d4abe8f686c" 
+                alt="日本旅游套餐" 
+                class="w-full h-full object-cover"
+              /><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+                <h2 class="text-3xl font-bold text-white">10天5城日本夏日限量游</h2>
+              </div>
+            </div>
+            <div class="grid grid-rows-2 gap-6">
+              <div class="relative overflow-hidden rounded-xl shadow-lg h-full">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=Romantic%20dining%20in%20Japan%2C%20couple%20having%20dinner%2C%20Japanese%20cuisine%2C%20elegant%20restaurant&sign=c5ec0cb5d17ab0b4396c567b3268bea3" 
+                  alt="日本美食" 
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="relative overflow-hidden rounded-xl shadow-lg h-full">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=Japanese%20movie%20theater%2C%20couple%20watching%20movie%2C%20luxury%20cinema%20experience&sign=1a1d3a23fc631a2694bf311076e95ce8" 
+                  alt="日本电影体验" 
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* Package Introduction */}
+          <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+            <h3 class="text-2xl font-bold mb-6 text-gray-900">套餐介绍</h3>
+            <p class="text-gray-700 mb-6">结合中国18-35岁情侣的浪漫旅行需求，将日本美食、电影浪漫、日本多地特色深度绑定，让整个旅程充满光、影、味蕾的双重疗愈。</p>
+            <p class="text-gray-700 mb-6">
+              本次旅程由flicknibble House精心策划，结合了我们在"电影+餐饮"领域的专业经验，为情侣打造一场难忘的浪漫之旅。在10天的旅程中，您将体验日本的文化、美食、电影和浪漫氛围，留下美好的回忆。
+            </p>
+            <div class="bg-purple-50 p-6 rounded-lg">
+              <h4 class="font-bold text-gray-900 mb-4">定价策略</h4>
+              <p class="text-gray-700">
+                本套餐采用高端、精致、浪漫导向的定价策略，针对追求极致体验的情侣群体。以3★-5★顶级住宿资源为核心升级，结合"核心景点全覆盖+专属VIP体验+高品质餐饮+专职导游服务"，提升行程的奢华感、私密性、情感价值和专属感。
+                通过顶级住宿和定制化服务形成核心竞争力，精准吸引重视旅行品质、愿意为舒适和专属体验付费的情侣群体。
+              </p>
+            </div>
+          </div>
+          
+          {/* Itinerary Details */}
+          <div class="mb-16">
+            <h3 class="text-2xl font-bold mb-8 text-gray-900">行程详情</h3>
+            <div class="space-y-12">
+              {/* Day 1-2 - Tokyo */}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <div class="inline-block px-4 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full mb-4">
+                      第1-2天
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-gray-900">东京</h4>
+                    <ul class="space-y-3">
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">抵达东京成田国际机场，专车接机</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">入住豪华酒店，享受欢迎晚宴</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">迪士尼乐园一日游，体验浪漫氛围</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">米其林星级餐厅用餐体验</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">东京塔夜景观赏</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="relative overflow-hidden rounded-xl shadow-lg h-80">
+                    <img 
+                      src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Tokyo%20skyline%2C%20romantic%20couple%20travel%2C%20night%20view%2C%20Tokyo%20Tower&sign=1a8b0bb33603cc521741fe30a7d281cc" 
+                      alt="东京"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Day 3-4 - Kyoto */}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                  <div class="relative overflow-hidden rounded-xl shadow-lg h-80">
+                    <img 
+                      src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Kyoto%20traditional%20temple%2C%20couple%20in%20kimono%2C%20cherry%20blossoms&sign=7775e01c30858062017b00e3ba66120d" 
+                      alt="京都"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div class="order-1 md:order-2">
+                  <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <div class="inline-block px-4 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full mb-4">
+                      第3-4天
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-gray-900">京都</h4>
+                    <ul class="space-y-3">
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">新干线前往京都</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">传统日式旅馆体验</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">和服租赁与文化体验</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">金阁寺、清水寺游览</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">茶道文化体验</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">岚山竹林漫步</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Day 5-6 - Osaka */}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <div class="inline-block px-4 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full mb-4">
+                      第5-6天
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-gray-900">大阪</h4>
+                    <ul class="space-y-3">
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">新干线前往大阪</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">环球影城一日游</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">道顿堀美食探索之旅</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">温泉度假体验</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">大阪城公园游览</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="relative overflow-hidden rounded-xl shadow-lg h-80">
+                    <img 
+                      src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Osaka%20Universal%20Studios%2C%20couple%20having%20fun%2C%20entertainment%20park&sign=05f4c8493a67ecffaf9581f4aa769bcc" 
+                      alt="大阪"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Day 7-8 - Mt. Fuji */}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                  <div class="relative overflow-hidden rounded-xl shadow-lg h-80">
+                    <img 
+                      src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Mount%20Fuji%20sunrise%2C%20couple%20watching%20sunrise%2C%20beautiful%20scenery&sign=bf77bda7d72b59beff8895f8525b7077" 
+                      alt="富士山"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div class="order-1 md:order-2">
+                  <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <div class="inline-block px-4 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full mb-4">
+                      第7-8天
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-gray-900">富士山</h4>
+                    <ul class="space-y-3">
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">专车前往富士山地区</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">富士山日出观赏</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">温泉酒店住宿</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">河口湖游览</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">浪漫晚餐体验</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Day 9-10 - Hokkaido */}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+                    <div class="inline-block px-4 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full mb-4">
+                      第9-10天
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-gray-900">北海道</h4>
+                    <ul class="space-y-3">
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">国内航班前往北海道</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">薰衣草田游览</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">海鲜美食体验</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">星空观测</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">送机返程</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="relative overflow-hidden rounded-xl shadow-lg h-80">
+                    <img 
+                      src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Hokkaido%20lavender%20field%2C%20romantic%20couple%20in%20field%2C%20summer%20flowers&sign=0ca9e4befae679d70faa90d13784c441" 
+                      alt="北海道"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Package Includes and Cost Details */}
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-gray-900">套餐包含</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span class="text-gray-700">国际往返机票（经济舱）</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span class="text-gray-700">全程豪华住宿（双人间）</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span class="text-gray-700">行程内所有早餐、午餐和晚餐</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span class="text-gray-700">全程专属导游和专车服务</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span class="text-gray-700">行程内所有景点门票</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span class="text-gray-700">旅游保险</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span class="text-gray-700">签证协助</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-gray-900">价格信息</h3>
+              <div class="space-y-6">
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-medium text-gray-900">淡季 (1月-2月, 5月-6月, 9月)</span>
+                    <span class="text-xl font-bold text-purple-600">¥25,000/人</span>
+                  </div>
+                  <p class="text-gray-500 text-sm">基准价格</p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-medium text-gray-900">旺季 (3月-4月樱花季, 7月-8月暑假, 10月-11月红叶季)</span>
+                    <span class="text-xl font-bold text-purple-600">¥28,750 - ¥30,000/人</span>
+                  </div>
+                  <p class="text-gray-500 text-sm">价格上浮15%-20%</p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-medium text-gray-900">特惠季 (12月非假期)</span>
+                    <span class="text-xl font-bold text-purple-600">¥22,500/人</span>
+                  </div>
+                  <p class="text-gray-500 text-sm">价格优惠10%</p>
+                </div>
+                
+                <div class="mt-6">
+                  <p class="text-gray-700 mb-4">* 价格基于双人入住计算，单人入住需补差价</p>
+                  <p class="text-gray-700">* 最终价格可能会根据汇率波动有所调整</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Cost Breakdown */}
+          <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+            <h3 class="text-2xl font-bold mb-6 text-gray-900">成本明细 (每人)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+              <div class="space-y-4">
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">交通费</span>
+                  <span class="text-gray-700">¥6,200</span>
+                </div>
+                <div class="pl-4 text-sm text-gray-600">
+                  <p>• 国际航班: 上海⇌东京 + 大阪⇌冲绳</p>
+                  <p>• 城际交通: 新干线、近铁等</p>
+                  <p>• 城市交通: 地铁、单轨等</p>
+                  <p>• 短途交通: 出租车、专车等</p>
+                </div>
+                
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">住宿费</span>
+                  <span class="text-gray-700">¥6,800</span>
+                </div>
+                <div class="pl-4 text-sm text-gray-600">
+                  <p>• 东京新宿/涩谷区酒店 (2晚)</p>
+                  <p>• 东京迪士尼主题酒店 (1晚)</p>
+                  <p>• 京都站/清水寺周边精品酒店 (3晚)</p>
+                  <p>• 大阪难波/心斋桥地区高端酒店 (2晚)</p>
+                  <p>• 冲绳那霸国际通海景度假酒店 (1晚)</p>
+                </div>
+                
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">餐饮费</span>
+                  <span class="text-gray-700">¥2,600</span>
+                </div>
+                <div class="pl-4 text-sm text-gray-600">
+                  <p>• 早餐: 9天酒店早餐</p>
+                  <p>• 午餐: 寿司郎、一兰拉面、京都怀石料理等</p>
+                  <p>• 晚餐: 居酒屋、美食街、主题餐厅等</p>
+                </div>
+              </div>
+              
+              <div class="space-y-4">
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">景点活动费</span>
+                  <span class="text-gray-700">¥3,500</span>
+                </div>
+                <div class="pl-4 text-sm text-gray-600">
+                  <p>• 门票: 东京迪士尼VIP套餐、东京塔等</p>
+                  <p>• 特别活动: 迪士尼VIP游行观赏、冲绳水上运动等</p>
+                </div>
+                
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">导游服务费</span>
+                  <span class="text-gray-700">¥1,600</span>
+                </div>
+                
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">保险费</span>
+                  <span class="text-gray-700">¥450</span>
+                </div>
+                
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">营销广告费</span>
+                  <span class="text-gray-700">¥650</span>
+                </div>
+                
+                <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">管理运营费</span>
+                  <span class="text-gray-700">¥1,100</span>
+                </div>
+                
+                <div class="flex justify-between items-center pt-2 border-t-2 border-purple-500 mt-2">
+                  <span class="font-bold text-gray-900">总成本</span>
+                  <span class="font-bold text-gray-900">¥20,900</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-bold text-purple-600">利润</span>
+                  <span class="font-bold text-purple-600">¥4,100 (19.6%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Booking Button */}
+          <div class="text-center">
+            <a href="#" class="inline-block px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg rounded-lg transition-colors" data-page="inquiry">
+              立即预订
+            </a>
+            <p class="text-gray-600 mt-4">
+              限量50组，预订从速！
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Programs Page -->
+    <div id="programs" class="page hidden">
+      {/* Page Header */}
+      <header class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">产品服务</h1>
+          <p class="text-xl text-gray-300">节目活动</p>
+        </div>
+      </header>
+      
+      {/* Main Content */}
+      <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">我们的节目与活动</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              flicknibble House提供多种独特的"电影+餐饮"体验，满足不同顾客的需求
+            </p>
+          </div>
+          
+          {/* Programs Cards */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Program 1 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-60">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Movie%20themed%20dinner%2C%20elegant%20presentation%2C%20creative%20cuisine%2C%20fine%20dining&sign=6130ebdff421353597fe17cd4bc009f7" 
+                  alt="电影主题晚餐"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute top-4 right-4 bg-purple-600 text-white px-4 py-2 rounded-full font-bold">
+                  ¥398/人起
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">电影主题晚餐</h3>
+                <p class="text-gray-700 mb-4">根据热门电影主题设计的特色晚餐，让您在用餐的同时感受电影的魅力</p>
+                <div class="mt-4">
+                  <h4 class="font-medium text-gray-900 mb-2">包含内容：</h4>
+                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">四道菜式精致晚餐</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">专属电影主题装饰</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">精选葡萄酒搭配</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">电影片段欣赏</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6">
+                  <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
+                    了解详情
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Program 2 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-60">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Private%20movie%20screening%2C%20luxury%20cinema%2C%20group%20of%20friends%20enjoying&sign=34fcb69d11d81dacf3d339affa9b1f37" 
+                  alt="私人观影派对"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute top-4 right-4 bg-purple-600 text-white px-4 py-2 rounded-full font-bold">
+                  ¥2,888/场起
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">私人观影派对</h3>
+                <p class="text-gray-700 mb-4">包场观影体验，为您和您的朋友提供专属的观影空间和定制服务</p>
+                <div class="mt-4">
+                  <h4 class="font-medium text-gray-900 mb-2">包含内容：</h4>
+                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">最多15人私人观影空间</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">定制电影选择</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">精选小食和饮品</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">专属服务人员</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6">
+                  <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
+                    了解详情
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Program 3 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-60">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Movie%20making%20experience%2C%20behind%20the%20scenes%2C%20filmmaking%20workshop&sign=a82ed31ad3755e942f921fbad57c0a60" 
+                  alt="电影制作体验"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute top-4 right-4 bg-purple-600 text-white px-4 py-2 rounded-full font-bold">
+                  ¥688/人
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">电影制作体验</h3>
+                <p class="text-gray-700 mb-4">参与电影制作的全过程，了解电影背后的故事和技术</p>
+                <div class="mt-4">
+                  <h4 class="font-medium text-gray-900 mb-2">包含内容：</h4>
+                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">电影制作工作坊</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">专业导演指导</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">拍摄和剪辑体验</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">成果展示和分享</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6">
+                  <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
+                    了解详情
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Program 4 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div class="relative overflow-hidden h-60">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Food%20and%20movie%20pairing%2C%20gourmet%20food%20with%20movie%20screening&sign=b4800217b1ae6d73f66462e0add6cecc" 
+                  alt="美食与电影配对"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute top-4 right-4 bg-purple-600 text-white px-4 py-2 rounded-full font-bold">
+                  ¥298/人
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">美食与电影配对</h3>
+                <p class="text-gray-700 mb-4">根据电影情节和场景设计的美食套餐，让您在观影过程中享受美食</p>
+                <div class="mt-4">
+                  <h4 class="font-medium text-gray-900 mb-2">包含内容：</h4>
+                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">多部经典电影选择</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">四式精美小食</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">特色饮品搭配</span>
+                    </li>
+                    <li class="flex items-center text-sm">
+                      <i class="fa fa-check text-green-500 mr-2"></i>
+                      <span class="text-gray-700">观影指南</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6">
+                  <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
+                    了解详情
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Upcoming Events */}
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl mb-16">
+            <h3 class="text-2xl font-bold mb-8 text-center text-gray-900">即将推出的活动</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-full h-40 overflow-hidden rounded-lg mb-4">
+                  <img 
+                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Halloween%20movie%20night%2C%20spooky%20decorations%2C%20costume%20party&sign=866a03d66d1cb6a540c8fe43420a6358" 
+                    alt="万圣节电影之夜" 
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">万圣节电影之夜</h4>
+                <p class="text-gray-700 text-sm mb-2">特别装扮、恐怖电影和主题美食</p>
+                <div class="text-purple-600 font-medium text-sm">2025年10月31日</div>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-full h-40 overflow-hidden rounded-lg mb-4">
+                  <img 
+                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Christmas%20movie%20marathon%2C%20holiday%20decorations%2C%20warm%20atmosphere&sign=371728e82d202c62f19e835610a5c980" 
+                    alt="圣诞节电影马拉松" 
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">圣诞节电影马拉松</h4>
+                <p class="text-gray-700 text-sm mb-2">经典圣诞电影、姜饼屋制作和热红酒</p>
+                <div class="text-purple-600 font-medium text-sm">2025年12月24-25日</div>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-full h-40 overflow-hidden rounded-lg mb-4">
+                  <img 
+                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Valentine%27s%20Day%20romantic%20movie%20dinner%2C%20couple%20celebrating%2C%20rose%20decorations&sign=839173a7c72ee86de26d64f474f749b1" 
+                    alt="情人节浪漫电影晚餐" 
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">情人节浪漫电影晚餐</h4>
+                <p class="text-gray-700 text-sm mb-2">双人浪漫晚餐、爱情电影和专属礼物</p>
+                <div class="text-purple-600 font-medium text-sm">2026年2月14日</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Events Calendar */}
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-gray-900">活动日历</h3>
+            <div class="grid grid-cols-7 gap-1 text-center">
+              {/* Week Headers */}
+              <div class="font-bold text-gray-500 py-2">一</div>
+              <div class="font-bold text-gray-500 py-2">二</div>
+              <div class="font-bold text-gray-500 py-2">三</div>
+              <div class="font-bold text-gray-500 py-2">四</div>
+              <div class="font-bold text-gray-500 py-2">五</div>
+              <div class="font-bold text-gray-500 py-2">六</div>
+              <div class="font-bold text-gray-500 py-2">日</div>
+              
+              {/* Dates */}
+              {Array.from({ length: 31 }).map((_, i) => {
+                const day = i + 1;
+                const hasEvent = [5, 12, 19, 26].includes(day);
+                return (
+                  <div 
+                    key={day} 
+                    class={`h-16 flex flex-col items-center justify-center rounded-lg border transition-colors ${
+                      hasEvent ? 'border-purple-200 hover:bg-purple-50' : 'border-gray-100 hover:bg-gray-50'
+                    }`}
+                  >
+                    <span class={`${hasEvent ? 'text-purple-600 font-medium' : 'text-gray-700'}`}>
+                      {day}
+                    </span>
+                    {hasEvent && (
+                      <span class="h-1 w-1 bg-purple-600 rounded-full mt-1"></span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Value Proposition Page -->
+    <div id="value" class="page hidden">
+      {/* Page Header */}
+      <header class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">为什么选择我们</h1>
+          <p class="text-xl text-gray-300">价值主张</p>
+        </div>
+      </header>
+      
+      {/* Main Content */}
+      <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">我们的价值主张</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              了解flicknibble House为什么是您"电影+餐饮"体验的最佳选择
+            </p>
+          </div>
+          
+          {/* Value Propositions */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Value 1 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group flex flex-col md:flex-row">
+              <div class="md:w-2/5 h-60 md:h-auto overflow-hidden">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Unique%20cinema%20dining%20experience%2C%20couple%20watching%20movie%20while%20dining&sign=2b20efe336f19f1e081cedd96c31be70" 
+                  alt="独特的体验"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="md:w-3/5 p-6 flex flex-col justify-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                  <i class="fa fa-film text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">独特的体验</h3>
+                <p class="text-gray-700">我们将电影和餐饮完美结合，创造出独特的沉浸式体验，让您在享受美食的同时，也能欣赏精彩的电影</p>
+              </div>
+            </div>
+            
+            {/* Value 2 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group flex flex-col md:flex-row">
+              <div class="md:w-2/5 h-60 md:h-auto overflow-hidden">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=High%20quality%20service%2C%20waiter%20serving%20food%20in%20luxury%20restaurant&sign=2d7ebfda3c317b7b1878ac501e752341" 
+                  alt="高品质的服务"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="md:w-3/5 p-6 flex flex-col justify-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                  <i class="fa fa-concierge-bell text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">高品质的服务</h3>
+                <p class="text-gray-700">我们的服务团队经过专业培训，致力于为您提供卓越的服务，确保您的每一次体验都完美无缺</p>
+              </div>
+            </div>
+            
+            {/* Value 3 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group flex flex-col md:flex-row">
+              <div class="md:w-2/5 h-60 md:h-auto overflow-hidden">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Creative%20food%20presentation%2C%20gourmet%20cuisine%2C%20innovative%20dishes&sign=7bfbc1776ea6c4c8a23bece6252aad67" 
+                  alt="创新的菜单"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="md:w-3/5 p-6 flex flex-col justify-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                  <i class="fa fa-utensils text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">创新的菜单</h3>
+                <p class="text-gray-700">我们的厨师团队不断创新，根据电影主题和季节变化设计特色菜单，为您带来味蕾的惊喜</p>
+              </div>
+            </div>
+            
+            {/* Value 4 */}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group flex flex-col md:flex-row">
+              <div class="md:w-2/5 h-60 md:h-auto overflow-hidden">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Comfortable%20cinema%20seating%2C%20luxury%20interior%2C%20elegant%20design&sign=ba5e488a71c9cffab6d5188a44a0d7a0" 
+                  alt="舒适的环境"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="md:w-3/5 p-6 flex flex-col justify-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                  <i class="fa fa-couch text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">舒适的环境</h3>
+                <p class="text-gray-700">我们精心设计的环境，既保留了电影院的舒适和沉浸感，又增添了餐厅的优雅和温馨</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Competitive Advantages */}
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl mb-16">
+            <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-900">我们的竞争优势</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600 mx-auto">
+                  <i class="fa fa-flag-checkered text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold mb-2 text-gray-900">行业先驱</h4>
+                <p class="text-gray-700 text-sm">flicknibble House是"电影+餐饮"行业的先驱，拥有丰富的经验和专业的团队</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600 mx-auto">
+                  <i class="fa fa-user-cog text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold mb-2 text-gray-900">定制化服务</h4>
+                <p class="text-gray-700 text-sm">我们提供个性化的定制服务，满足不同顾客的需求和偏好</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600 mx-auto">
+                  <i class="fa fa-handshake text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold mb-2 text-gray-900">战略合作伙伴</h4>
+                <p class="text-gray-700 text-sm">我们与多家知名电影公司和餐厅建立了战略合作关系，确保为顾客提供优质的内容和服务</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-600 mx-auto">
+                  <i class="fa fa-lightbulb text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold mb-2 text-gray-900">持续创新</h4>
+                <p class="text-gray-700 text-sm">我们不断创新服务和体验，保持行业领先地位</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Target Market */}
+          <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+            <h3 class="text-2xl font-bold mb-6 text-gray-900">我们的目标市场</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h4 class="font-bold text-lg mb-4 text-purple-600">主要受众</h4>
+                <p class="text-gray-700 mb-2">18-35岁的年轻情侣</p>
+                <p class="text-gray-700 mb-2">注重生活品质的都市白领</p>
+                <p class="text-gray-700">电影和美食爱好者</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-4 text-purple-600">客户需求</h4>
+                <p class="text-gray-700 mb-2">独特的约会体验</p>
+                <p class="text-gray-700 mb-2">高品质的娱乐和餐饮服务</p>
+                <p class="text-gray-700">创新的消费体验</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-4 text-purple-600">市场定位</h4>
+                <p class="text-gray-700 mb-2">高端"电影+餐饮"体验品牌</p>
+                <p class="text-gray-700 mb-2">创新的生活方式提供者</p>
+                <p class="text-gray-700">浪漫约会的首选场所</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Customer Testimonials */}
+          <div>
+            <h3 class="text-2xl font-bold mb-8 text-center text-gray-900">客户反馈</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                </div>
+                <p class="text-gray-700 mb-4 italic">这是我体验过的最独特的观影方式，美食和电影的结合让整个晚上变得难忘。</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                    <i class="fa fa-user text-gray-500"></i>
+                  </div>
+                  <span class="font-medium text-gray-900">张先生</span>
+                </div>
+              </div>
+              
+              <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                </div>
+                <p class="text-gray-700 mb-4 italic">服务非常专业，食物也很美味，环境舒适，是约会的绝佳选择。</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                    <i class="fa fa-user text-gray-500"></i>
+                  </div>
+                  <span class="font-medium text-gray-900">李女士</span>
+                </div>
+              </div>
+              
+              <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-yellow-400"></i>
+                  <i class="fa fa-star text-gray-300"></i>
+                </div>
+                <p class="text-gray-700 mb-4 italic">电影主题的菜单很有创意，每一道菜都能带来惊喜，强烈推荐！</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                    <i class="fa fa-user text-gray-500"></i>
+                  </div>
+                  <span class="font-medium text-gray-900">王先生</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Inquiry Page -->
+    <div id="inquiry" class="page hidden">
+      {/* Page Header */}
+      <header class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">联系我们</h1>
+          <p class="text-xl text-gray-300">查询表</p>
+        </div>
+      </header>
+      
+      {/* Main Content */}
+      <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div>
+              <h2 class="text-2xl font-bold mb-6 text-gray-900">联系我们</h2>
+              <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                <div class="space-y-6">
+                  <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4">
+                      <i class="fa fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-900 mb-1">地址</h3>
+                      <p class="text-gray-700">上海市浦东新区张江高科技园区科苑路88号</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4">
+                      <i class="fa fa-phone text-xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-900 mb-1">电话</h3>
+                      <p class="text-gray-700">+86 21 5555 5555</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4">
+                      <i class="fa fa-envelope text-xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-900 mb-1">邮箱</h3>
+                      <p class="text-gray-700">info@flicknibblehouse.com</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4">
+                      <i class="fa fa-clock text-xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-900 mb-1">营业时间</h3>
+                      <p class="text-gray-700">周一至周日 10:00 - 22:00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Social Media */}
+              <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="font-bold text-gray-900 mb-4">关注我们</h3>
+                <div class="flex space-x-4">
+                  <a href="#" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
+                    <i class="fa-brands fa-facebook-f text-xl"></i>
+                  </a>
+                  <a href="#" class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                    <i class="fa-brands fa-twitter text-xl"></i>
+                  </a>
+                  <a href="#" class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                  </a>
+                  <a href="#" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors">
+                    <i class="fa-brands fa-weixin text-xl"></i>
+                  </a>
+                  <a href="#" class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition-colors">
+                    <i class="fa-brands fa-weibo text-xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            {/* Inquiry Form */}
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h2 class="text-2xl font-bold mb-6 text-gray-900">查询表单</h2>
+              <form id="contact-form" class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                    姓名 <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                    placeholder="请输入您的姓名"
+                    required
+                  />
+                </div>
+                
+                <div><label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                    邮箱 <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                    placeholder="请输入您的邮箱地址"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                    电话
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                    placeholder="请输入您的电话号码"
+                  />
+                </div>
+                
+                <div>
+                  <label for="inquiryType" class="block text-sm font-medium text-gray-700 mb-1">
+                    查询类型
+                  </label>
+                  <select
+                    id="inquiryType"
+                    name="inquiryType"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                  >
+                    <option value="general">一般咨询</option>
+                    <option value="booking">预订咨询</option>
+                    <option value="feedback">意见反馈</option>
+                    <option value="cooperation">合作洽谈</option>
+                    <option value="other">其他</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                    留言内容 <span class="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                    placeholder="请输入您的留言内容"
+                    required
+                  ></textarea>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input
+                      id="agreement"
+                      name="agreement"
+                      type="checkbox"
+                      class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                      required
+                    />
+                  </div>
+                  <div class="ml-3 text-sm">
+                    <label for="agreement" class="text-gray-700">
+                      我同意flicknibble House根据<a href="#" class="text-purple-600 hover:text-purple-700">隐私政策</a>处理我的个人信息
+                      <span class="text-red-500">*</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <div>
+                  <button
+                    type="submit"
+                    id="submit-btn"
+                    class="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center"
+                  >
+                    <i class="fa fa-paper-plane mr-2"></i> 提交
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Success Message Modal -->
+    <div id="success-modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 relative z-10 transform transition-all">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-check text-green-500 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">提交成功！</h3>
+          <p class="text-gray-600 mb-6">感谢您的咨询，我们将尽快回复您！</p>
+          <button id="close-modal" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Footer */}
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Brand Information */}
+        <div>
+          <div className="flex items-center mb-4">
+            <img 
+              src="https://lf-code-agent.coze.cn/obj/x-ai-cn/316078710274/attachment/微信图片_20250926134537_20251227182351.jpg" 
+              alt="FlickNibble House Logo" 
+              className="h-10 w-auto mr-2"
+            />
+            <span class="ml-2 text-xl font-bold">FlickNibble House</span>
+          </div>
+          <p class="text-gray-400 mb-4">
+            FlickNibble House是一个专注于"电影+餐饮"创新体验的品牌，其本身是一个可以提供餐饮服务的电影院，通过基于场景的订餐、不间断送餐等服务，打破观影与用餐的界限。
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa-brands fa-weixin"></i>
+            </a>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors nav-link" data-page="home">首页</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors nav-link" data-page="overview">关于我们</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors nav-link" data-page="japan-tour">产品服务</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors nav-link" data-page="value">为什么选择我们</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors nav-link" data-page="inquiry">联系我们</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Information */}
+        <div>
+          <h3 class="text-lg font-semibold mb-4">联系我们</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fa-solid fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+              <span class="text-gray-400">上海市浦东新区张江高科技园区科苑路88号</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-phone mr-3 text-gray-400"></i>
+              <span class="text-gray-400">+86 21 5555 5555</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-envelope mr-3 text-gray-400"></i>
+              <span class="text-gray-400">info@flicknibblehouse.com</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-clock mr-3 text-gray-400"></i>
+              <span class="text-gray-400">周一至周日 10:00 - 22:00</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Newsletter Subscription */}
+        <div>
+          <h3 class="text-lg font-semibold mb-4">订阅通讯</h3>
+          <p class="text-gray-400 mb-4">订阅我们的通讯，获取最新的活动和优惠信息。</p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="您的邮箱地址"
+              class="flex-1 px-4 py-2 rounded-l-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <button
+              type="submit"
+              class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r-md transition-colors"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {/* Copyright Information */}
+      <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">© 2025 FlickNibble House. 保留所有权利。</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">隐私政策</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">服务条款</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie政策</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 等待DOM加载完成
+    document.addEventListener('DOMContentLoaded', function() {
+      // 获取元素
+      const navLinks = document.querySelectorAll('[data-page]');
+      const pages = document.querySelectorAll('.page');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+      const contactForm = document.getElementById('contact-form');
+      const successModal = document.getElementById('success-modal');
+      const closeModalBtn = document.getElementById('close-modal');
+      const submitBtn = document.getElementById('submit-btn');
+      const languageBtns = document.querySelectorAll('.language-btn');
+      
+      // 初始化当前页面
+      let currentPage = 'home';
+      
+      // 显示指定页面
+      function showPage(pageId) {
+        // 隐藏所有页面
+        pages.forEach(page => {
+          page.classList.add('hidden');
+          page.classList.remove('active');
+        });
+        
+        // 显示指定页面
+        const pageToShow = document.getElementById(pageId);
+        if (pageToShow) {
+          pageToShow.classList.remove('hidden');
+          pageToShow.classList.add('active');
+          currentPage = pageId;
+        }
+        
+        // 关闭移动菜单
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.innerHTML = '<i class="fa fa-bars h-6 w-6"></i>';
+      }
+      
+      // 导航链接点击事件
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const pageId = this.getAttribute('data-page');
+          if (pageId) {
+            showPage(pageId);
+          }
+        });
+      });
+      
+      // 移动菜单按钮点击事件
+      mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenuBtn.innerHTML = '<i class="fa fa-bars h-6 w-6"></i>';
+        } else {
+          mobileMenuBtn.innerHTML = '<i class="fa fa-times h-6 w-6"></i>';
+        }
+      });
+      
+      // 移动下拉菜单点击事件
+      mobileDropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('button');
+        const content = dropdown.querySelector('div');
+        const icon = button.querySelector('i');
+        
+        button.addEventListener('click', function() {
+          content.classList.toggle('hidden');
+          if (content.classList.contains('hidden')) {
+            icon.classList.remove('rotate-180');
+          } else {
+            icon.classList.add('rotate-180');
+          }
+        });
+      });
+      
+      // 表单提交事件
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // 显示加载状态
+        submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 提交中...';
+        submitBtn.disabled = true;
+        
+        // 模拟API调用延迟
+        setTimeout(function() {
+          // 恢复按钮状态
+          submitBtn.innerHTML = '<i class="fa fa-paper-plane mr-2"></i> 提交';
+          submitBtn.disabled = false;
+          
+          // 显示成功模态框
+          successModal.classList.remove('hidden');
+          
+          // 重置表单
+          contactForm.reset();
+        }, 1500);
+      });
+      
+      // 关闭模态框按钮点击事件
+      closeModalBtn.addEventListener('click', function() {
+        successModal.classList.add('hidden');
+      });
+      
+      // 点击模态框背景关闭模态框
+      successModal.addEventListener('click', function(e) {
+        if (e.target === successModal) {
+          successModal.classList.add('hidden');
+        }
+      });
+      
+      // 语言切换
+      languageBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // 移除所有按钮的活动状态
+          languageBtns.forEach(b => {
+            b.classList.remove('bg-purple-600', 'text-white');
+            b.classList.add('text-gray-700');
+          });
+          
+          // 设置当前按钮为活动状态
+          this.classList.remove('text-gray-700');
+          this.classList.add('bg-purple-600', 'text-white');
+          
+          // 这里可以添加实际的语言切换逻辑
+          const lang = this.getAttribute('data-lang');
+          console.log('切换到语言:', lang);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
